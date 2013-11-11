@@ -31,14 +31,15 @@ function updateMessage(message, className)
 function setSendingState()
 {
 	sending = true;
-	updateMessage('Enviando...', false);
+	//updateMessage('Enviando...', false);
 	$('button[type="submit"]').addClass('disabled');
 }
 
 function setSendingSuccessState()
 {
 	sending = false;
-	updateMessage('Datos enviados correctamente, gracias por participar!', 'success');
+	//updateMessage('Datos enviados correctamente, gracias por participar!', 'success');
+	alert('Datos enviados correctamente, gracias por participar!');
 	$('button[type="submit"]').removeClass('disabled');
 	
 	clearFormStyles();
@@ -47,7 +48,8 @@ function setSendingSuccessState()
 
 function setErrorValidationState()
 {
-	updateMessage('Debes completar correctamente todos los campos.', 'error');
+	//updateMessage('Debes completar correctamente todos los campos.', 'error');
+	alert('Debes completar correctamente todos los campos.');
 }
 
 function setClearState()

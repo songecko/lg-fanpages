@@ -1,8 +1,20 @@
 <?php 
 
+require 'vendor/facebook/facebook.php';
+
+$facebook = new Facebook(array(
+		'appId'  => '207375499424489',
+		'secret' => '2531bd11ac41bec9a11cec3ccf485f69',
+		'cookie' => true
+));
+
+// Get User ID
+$user = $facebook->getUser();
+
+echo "Facebook user id: ".$user;
+
 $register = $_POST['register'];
 $fullname = $register['fullname'];
-var_dump($fullname);
 $email = $register['email'];
 $phone = $register['phone'];
 $day = $register['birthdate']['day'];
@@ -52,6 +64,20 @@ if($saved)
 	$headers .= "From: ".$fullname." <".$email.">\r\n"; 
 
 	var_dump(mail($destinatario, $asunto, $cuerpo, $headers));
+	
+	if($user)
+	{
+		try {
+			$ret_obj = $facebook->api('/me/feed', 'POST',
+					array(
+							'link' => 'www.lg.com',
+							'message' => 'He participado en la promoción de LG!'
+					));
+		} catch(FacebookApiException $e) {
+			echo($e->getType());
+			echo($e->getMessage());
+		}
+	}
 }
 
 echo var_dump($saved);

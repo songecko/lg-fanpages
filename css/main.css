@@ -26,6 +26,7 @@ body {
 	font-family: 'lg_smartregular', sans serif;
 	font-size: 15px;
 	background: #FFFFFF;
+	color: #6c6f70;
 }
 
 .container {
@@ -40,7 +41,10 @@ body {
 }
 
 #content form input{
-	padding: 0;
+	padding: 0 5px;
+	border-radius: 2px;
+	font-size: 12px;
+	color: #6c6f70;
 }
 
 #content form{
@@ -49,10 +53,15 @@ body {
 }
 
 #content form .fullname input{
-	width: 100%;
+	width: 282px;
 }
 #content form .email input{
-	width: 196px;
+	width: 158px;
+	float: left;
+}
+#content form .email img{
+	float: left;
+	margin: 2px 0 0 8px;
 }
 #content form .phone input{
 	width: 78px;
@@ -63,10 +72,14 @@ body {
 #content form select{
 	padding: 0;
 	font-size: 13px;
+	border-radius: 2px;
+	height: 22px;
+	color: #6c6f70;
 }
 
 .email{
 	float: left;
+	width: 200px;
 }
 
 .phone{
@@ -91,7 +104,7 @@ body {
 	float: right;
 }
 .registerButton{
-	width: 0 auto;
+	margin: 10px 0 0 0;
 }
 #content h2 {
 	font-weight: bold;
@@ -170,33 +183,39 @@ body {
 	margin-top: 2px;
 }
 
+#content form label {
+	font-size: 15px;
+}
 #content form .field-row label {
-	font-size: 12px;
-	/*font-weight: bold;*/
 	margin-left: 8px;
 	float: left;
 	margin: 0 0 0 6px;
+	font-size: 12px;
+	line-height: 22px;
 }
 #content form .terminos{
 	vertical-align: middle;
 }
 
-#content form .terminos input {	
-	margin-left: 8px;	
-	 vertical-align: middle;
-}
 #content form .terminos label {
 	font-size: 12px;
 	display: inline;	
-	margin-left: 4px;
-	
+	margin-left: 4px;	
+}
+#content form .terminos input {
+	margin: 0;
 }
 #content form  button{
-	
 	margin: 0 auto;
 	display: block;
 	border: 0;
 	background: none;
+}
+
+#content .twButton {
+	position: absolute;
+	bottom: 0;
+	right: 18px;
 }
 
 #content .rules {
@@ -209,6 +228,7 @@ p#message {
 	margin: 10px 0 0 45px;
 	color: gray;
 	width: 400px;
+	display:none;
 }
 
 p#message.success {

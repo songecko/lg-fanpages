@@ -1,4 +1,33 @@
-﻿<!DOCTYPE html>
+<?php
+	require 'vendor/facebook/facebook.php';
+
+	$facebook = new Facebook(array(
+		'appId'  => '207375499424489',
+		'secret' => '2531bd11ac41bec9a11cec3ccf485f69',
+		'cookie' => true
+	));
+
+	$login_url = $facebook->getLoginUrl(array(
+			'scope' => 'publish_stream',
+			//'redirect_uri' => 'https://tresepic.com/clients/lg/fanpages/?redirectfp=pr'
+			//'redirect_uri' => 'https://www.facebook.com/pages/Testing/140839539432205?id=140839539432205&sk=app_207375499424489'
+	));
+	// Get User ID
+	$user = $facebook->getUser();
+		
+	if(!$user) 
+	{
+		
+		echo "<html>
+				<head>
+					<script type='text/javascript'>	top.location.href = '".$login_url."';</script>
+				</head>
+				<body></body>
+			  </html>";
+        exit;
+	}
+?>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -13,10 +42,10 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>        
     </head>
     <body>
-        <div class="container">
+        <div class="container mainContainer" style="display:none;">
             <div id="content">
 				<form action="#" method="post">
 					<div class="fullname">
@@ -26,9 +55,10 @@
 					<div class="email">
 						<label for="email">E-mail:</label>
 						<input type="text" name="register[email]" id="email" />
+						<img src="images/candado.png" alt="Candado">
 					</div>
 					<div class="phone">
-						<label for="phone">Telefono:</label>
+						<label for="phone">Teléfono:</label>
 						<input type="text" name="register[phone]" id="phone" />
 					</div>
 					<div class="date">
@@ -74,18 +104,32 @@
 					</div>
 					<h4>Términos y condiciones</h4>
 					<div class="terminos">						
-						<input type="checkbox" name="register[accept]" id="accept"><label>He leído y acepto los <a href="reglas-oficiales.pdf" target="blank">términos y condiciones</a></label>
+						<input type="checkbox" name="register[accept]" id="accept"><label>He leído y acepto los <a href="reglas-oficiales.pdf" target="_blank">términos y condiciones</a></label>
 					</div>
 					<p id="message"></p>
 					<div class="registerButton">
 						<button type="submit"><img src="images/registerButton.png" alt="Reglas" /></button>
 					</div>		
 				</form>
+				<a href="https://twitter.com/livinglg" target="_blank" class="twButton"><img src="images/twButton.png"></a>
             </div>
         </div>
 
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+        	$(document).ready(function()
+			{
+        		if (window.self === window.top) 
+            	{
+                	window.location = 'https://www.facebook.com/pages/Testing/140839539432205?id=140839539432205&sk=app_207375499424489';
+            	}else
+            	{
+                	$('.mainContainer').show();
+            	}
+            });
+    		
+		</script>
     </body>
 </html>
