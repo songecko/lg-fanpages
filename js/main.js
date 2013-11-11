@@ -77,15 +77,11 @@ function isValidForm()
 	{
 		isValid = false;
 	}	
-	if($.trim($('#birthday').val()) == '')
-	{
-		isValid = false;
-	}	
 	if($.trim($('#country').val()) == '')
 	{
 		isValid = false;
-	}	
-	if($.trim($('#wants_newsletter').val()) != '1')
+	}
+	if($('#accept').is(':checked') == false)
 	{
 		isValid = false;
 	}	

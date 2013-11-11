@@ -2,21 +2,22 @@
 
 $register = $_POST['register'];
 $fullname = $register['fullname'];
+var_dump($fullname);
 $email = $register['email'];
 $phone = $register['phone'];
 $day = $register['birthdate']['day'];
 $month = $register['birthdate']['month'];
 $year = $register['birthdate']['year'];
-$birthdate = $year."-".$month."-".$day
+$birthdate = $year."-".$month."-".$day;
 $country = $register['country'];
-$wants_newsletter = ($register['wants_newsletter']=='yes')?1:0;
+$wants_newsletter = ($register['wants_newsletter']!='')?1:0;
 
 
 //Guardado en base de datos
 //$conexion = mysql_connect("lglanding.db.11699024.hostedresource.com", "lglanding", "Lg@landing2013");
-$conexion = mysql_connect("localhost", "root", "");
+$conexion = mysql_connect("localhost", "root", "123456");
 mysql_select_db("lglanding", $conexion);
-$sql= "INSERT INTO user(fullname, email, phone, birthdate, country, wants_newsletter) VALUES ('".$fullname."', '".$email."','".$phone."','".$birthdate."','".$country."', ".$wants_newsletter.")";
+$sql= "INSERT INTO user(fullname, email, phone, birthdate, country, wants_newsletter) VALUES ('".addslashes($fullname)."', '".$email."','".$phone."','".$birthdate."','".$country."', ".$wants_newsletter.")";
 $saved = mysql_query($sql);
 
 //Envio de email
@@ -24,7 +25,7 @@ if($saved)
 {
 	$destinatario = "alanmikahil.taveras@gmail.com"; 
 	$asunto = "[LG Promo] Nuevo registro"; 
-	$fechaNac = $day."-".$month."-".$year
+	$fechaNac = $day."-".$month."-".$year;
 	$cuerpo = ' 
 	<html> 
 	<head> 
@@ -53,4 +54,4 @@ if($saved)
 	var_dump(mail($destinatario, $asunto, $cuerpo, $headers));
 }
 
-echo $saved;
+echo var_dump($saved);

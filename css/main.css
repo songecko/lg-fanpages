@@ -1,19 +1,12 @@
 @font-face {
-    font-family: 'helveticaneuelight';
-    src: url('helveticaneue_light-webfont.eot');
-    src: url('helveticaneue_light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('helveticaneue_light-webfont.woff') format('woff'),
-         url('helveticaneue_light-webfont.ttf') format('truetype'),
-         url('helveticaneue_light-webfont.svg#helveticaneuelight') format('svg'),
-		 url('LG Smart Bold Italic.ttf'),
-		 url('LG Smart Bold.ttf'),
-		 url('LG Smart Light.ttf'),
-		 url('LG Smart Regular Ital0ic.ttf'),
-		 url('LG Smart Regular.ttf'),
-		 url('LG Smart SemiBold.ttf');
+    font-family: 'lg_smartregular';
+    src: url('lg_smart_regular-webfont.eot');
+    src: url('lg_smart_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('lg_smart_regular-webfont.woff') format('woff'),
+         url('lg_smart_regular-webfont.ttf') format('truetype'),
+         url('lg_smart_regular-webfont.svg#lg_smartregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 input::-webkit-input-placeholder { /* WebKit browsers */
@@ -30,8 +23,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 
 body {
-	/*font-family: 'helveticaneuelight', sans serif;*/
-	font-family: 'LG Smart Bold Italic';
+	font-family: 'lg_smartregular', sans serif;
 	font-size: 15px;
 	background: #FFFFFF;
 }
@@ -52,7 +44,7 @@ body {
 }
 
 #content form{
-	width: 264px;
+	width: 294px;
 	margin: 0 auto;
 }
 
@@ -60,7 +52,7 @@ body {
 	width: 100%;
 }
 #content form .email input{
-	width: 146px;
+	width: 196px;
 }
 #content form .phone input{
 	width: 78px;
@@ -68,6 +60,11 @@ body {
 #content form .country input{
 	width: 73px;
 }
+#content form select{
+	padding: 0;
+	font-size: 13px;
+}
+
 .email{
 	float: left;
 }
@@ -81,11 +78,11 @@ body {
 }
 
 .month{
-	width: 81px;
+	width: 91px;
 }
 
 .year{
-	width: 47px;
+	width: 57px;
 }
 .date{
 	float: left;
@@ -93,7 +90,9 @@ body {
 .country{
 	float: right;
 }
-
+.registerButton{
+	width: 0 auto;
+}
 #content h2 {
 	font-weight: bold;
 	margin: 0 0 15px 0;
@@ -187,13 +186,17 @@ body {
 	 vertical-align: middle;
 }
 #content form .terminos label {
-	font-size: 10px;
+	font-size: 12px;
 	display: inline;	
 	margin-left: 4px;
+	
 }
 #content form  button{
 	
 	margin: 0 auto;
+	display: block;
+	border: 0;
+	background: none;
 }
 
 #content .rules {

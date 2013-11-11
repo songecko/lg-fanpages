@@ -34,16 +34,26 @@
 					<div class="date">
 						<label>Fecha de nacimiento:</label>
 						<select class="day" type="text" name="register[birthdate][day]">
-							<?php for($i=1;$i<31;$i++):?>
+							<?php for($i=1;$i<=31;$i++):?>
 								<option value="<?php echo $i ?>"><?php echo $i ?></option>
 							<?php endfor; ?>
 						</select>
 						<select class="month" type="text" name="register[birthdate][month]" >
-							<option>Enero
-							</option>
+							<option value="01">Enero</option>
+							<option value="02">Febrero</option>
+							<option value="03">Marzo</option>
+							<option value="04">Abril</option>
+							<option value="05">Mayo</option>
+							<option value="06">Junio</option>
+							<option value="07">Julio</option>
+							<option value="08">Agosto</option>
+							<option value="09">Septiembre</option>
+							<option value="10">Octubre</option>
+							<option value="11">Noviembre</option>
+							<option value="12">Diciembre</option>
 						</select>
 						<select class="year" type="text" name="register[birthdate][year]"  >
-							<?php for($i=1940;$i<2013;$i++):?>
+							<?php for($i=1940;$i<=2013;$i++):?>
 								<option value="<?php echo $i ?>"><?php echo $i ?></option>
 							<?php endfor; ?>
 						</select>
@@ -64,10 +74,12 @@
 					</div>
 					<h4>Términos y condiciones</h4>
 					<div class="terminos">						
-						<input type="checkbox" name="register[accept]"><label>He leído y acepto los términos y condiciones</label>
+						<input type="checkbox" name="register[accept]" id="accept"><label>He leído y acepto los <a href="reglas-oficiales.pdf" target="blank">términos y condiciones</a></label>
 					</div>
 					<p id="message"></p>
-					<button type="submit" class="pull-right"><img src="images/registerButton.png" alt="Reglas" /></button>	
+					<div class="registerButton">
+						<button type="submit"><img src="images/registerButton.png" alt="Reglas" /></button>
+					</div>		
 				</form>
             </div>
         </div>
