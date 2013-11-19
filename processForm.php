@@ -1,5 +1,7 @@
 <?php 
 
+header("Content-Type: text/html;charset=utf-8");
+
 require 'vendor/facebook/facebook.php';
 
 $facebook = new Facebook(array(
@@ -29,7 +31,8 @@ $wants_newsletter = ($register['wants_newsletter']!='')?1:0;
 $conexion = mysql_connect("lgfanpage.db.11699024.hostedresource.com", "lgfanpage", "Lg@landing2013");
 //$conexion = mysql_connect("localhost", "root", "123456");
 mysql_select_db("lgfanpage", $conexion);
-$sql= "INSERT INTO user(fullname, email, phone, birthdate, country, wants_newsletter) VALUES ('".addslashes($fullname)."', '".$email."','".$phone."','".$birthdate."','".$country."', ".$wants_newsletter.")";
+mysql_query("SET NAMES 'utf8'");
+$sql= 'INSERT INTO user(fullname, email, phone, birthdate, country, wants_newsletter) VALUES ("'.$fullname.'", "'.$email.'","'.$phone.'","'.$birthdate.'","'.$country.'", "'.$wants_newsletter.'")';
 $saved = mysql_query($sql);
 
 //Envio de email
