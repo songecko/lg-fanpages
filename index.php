@@ -12,20 +12,31 @@
 			//'redirect_uri' => 'https://tresepic.com/clients/lg/fanpages/?redirectfp=pr'
 			//'redirect_uri' => 'https://www.facebook.com/pages/Testing/140839539432205?id=140839539432205&sk=app_207375499424489'
 	));
-	// Get User ID
-	$user = $facebook->getUser();
-		
-	if(!$user) 
-	{
-		
-		echo "<html>
+	$redirectScript = "<html>
 				<head>
 					<script type='text/javascript'>	top.location.href = '".$login_url."';</script>
 				</head>
 				<body></body>
 			  </html>";
+			  
+	// Get User ID
+	$user = $facebook->getUser();
+		
+	if(!$user) 
+	{		
+		echo $redirectScript;
         exit;
 	}
+	
+	try 
+	{
+		$user_profile = $facebook->api('/me','GET');
+	} catch (Exception $e) 
+	{
+		echo $redirectScript;
+        exit;
+	}
+	
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
