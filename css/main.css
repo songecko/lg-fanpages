@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'lg_smartregular';
+    src: url('lg_smart_regular-webfont.eot');
+    src: url('lg_smart_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('lg_smart_regular-webfont.woff') format('woff'),
+         url('lg_smart_regular-webfont.ttf') format('truetype'),
+         url('lg_smart_regular-webfont.svg#lg_smartregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #000000;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #000000;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #000000;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #000000;
+}
+
+body {
+	font-family: 'lg_smartregular', sans serif;
+	font-size: 15px;
+	background: #FFFFFF;
+	color: #6c6f70;
+}
+
+.container {
+	width: 500px;
+	height: 819px;
+	position: relative;
+	background: url(../images/background.png) no-repeat;
+}
+
+#content {
+	margin-top: 406px;
+}
+
+#content form input{
+	padding: 0 5px;
+	border-radius: 2px;
+	font-size: 12px;
+	color: #6c6f70;
+}
+
+#content form{
+	width: 294px;
+	margin: 0 auto;
+}
+
+#content form .fullname input{
+	width: 282px;
+}
+#content form .email input{
+	width: 158px;
+	float: left;
+}
+#content form .email img{
+	float: left;
+	margin: 2px 0 0 8px;
+}
+#content form .phone input{
+	width: 78px;
+}
+#content form .country select{
+	width: 84px;
+}
+#content form select{
+	padding: 0;
+	font-size: 13px;
+	border-radius: 2px;
+	height: 22px;
+	color: #6c6f70;
+}
+
+.email{
+	float: left;
+	width: 200px;
+}
+
+.phone{
+	float: right;
+}
+
+.day{
+	width: 40px;
+}
+
+.month{
+	width: 91px;
+}
+
+.year{
+	width: 57px;
+}
+.date{
+	float: left;
+}
+.country{
+	float: right;
+}
+.registerButton{
+	margin: 10px 0 0 0;
+}
+#content h2 {
+	font-weight: bold;
+	margin: 0 0 15px 0;
+	font-size: 16px;
+}
+#content h4 {
+	font-size: 15px;
+	font-weight: normal;
+	margin: 10px 0 3px;
+}
+
+#content p {
+	width: 370px;
+/*	font-weight: bold;*/
+	margin: 0;
+}
+
+#content .price {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#content form .fields {
+	margin-top: 50px;
+}
+
+#content form  .fields input {
+	float: left;
+	border: 1px solid #b10043;
+	text-align: center;
+	width: 170px;
+	color:    #000000;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	margin: 0;
+	height: 23px;
+}
+
+#content form  .fields input#fullname {
+	margin-left: 45px;
+}
+
+#content form  .fields input#email {
+	margin-left: 30px;
+}
+
+#content form  .fields input#age {
+	margin-left: 12px;
+	width: 84px;
+}
+
+#content form  .fields button {
+	border: 0;
+	background: none;
+	height: 33px;
+	margin-right: 45px;
+}
+
+#content .question {
+	width: 100%;
+	margin: 15px 0 6px;
+	font-size: 13px;
+	/*font-weight: bold;*/
+	float: left;
+}
+
+#content form .field-row {
+	/*margin: 5px 0;*/
+}
+
+#content form .field-row input {
+	float: left;
+	margin-top: 2px;
+}
+
+#content form label {
+	font-size: 15px;
+}
+#content form .field-row label {
+	margin-left: 8px;
+	float: left;
+	margin: 0 0 0 6px;
+	font-size: 12px;
+	line-height: 22px;
+}
+#content form .terminos{
+	vertical-align: middle;
+}
+
+#content form .terminos label {
+	font-size: 12px;
+	display: inline;	
+	margin-left: 4px;	
+}
+#content form .terminos input {
+	margin: 0;
+}
+#content form  button{
+	margin: 0 auto;
+	display: block;
+	border: 0;
+	background: none;
+}
+
+#content .twButton {
+	position: absolute;
+	bottom: 0;
+	right: 18px;
+}
+
+#content .rules {
+	text-align: center;
+	display: block;
+}
+
+p#message {	
+	font-size: 14px;
+	margin: 10px 0 0 45px;
+	color: gray;
+	width: 400px;
+	display:none;
+}
+
+p#message.success {
+	color: #1EBA3D;
+}
+
+p#message.error {
+	color: #b10043;
+}
