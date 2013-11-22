@@ -38,7 +38,7 @@ $saved = mysql_query($sql);
 //Envio de email
 if($saved)
 {
-	$destinatario = "songecko@gmail.com"; //"alanmikahil.taveras@gmail.com"; 
+	$destinatario = "zinia.english@lge.com";
 	$asunto = "[LG Promo] Nuevo registro"; 
 	$fechaNac = $day."-".$month."-".$year;
 	$cuerpo = ' 
@@ -66,7 +66,7 @@ if($saved)
 	//Dirección del remitente 
 	$headers .= "From: ".$fullname." <".$email.">\r\n"; 
 
-	//var_dump(mail($destinatario, $asunto, $cuerpo, $headers));
+	var_dump(mail($destinatario, $asunto, $cuerpo, $headers));
 	
 	if($user)
 	{
@@ -74,7 +74,7 @@ if($saved)
 			$ret_obj = $facebook->api('/me/feed', 'POST',
 					array(
 							'link' => 'http://www.lg.com/pa/telefonos-celulares/lg-G2-D805',
-							'message' => 'Estoy participado en la promoción de LG para ganarme un #LGG2 todas las semanas, tú también puedes participar. Visita: http://on.fb.me/19DVQPz.'
+							'message' => 'Estoy participado en la promoción de LG para ganarme un #LGG2 todas las semanas, tú también puedes participar. Visita: http://on.fb.me/17OMbeI.'
 					));
 		} catch(FacebookApiException $e) {
 			echo($e->getType());
