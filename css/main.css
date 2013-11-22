@@ -28,8 +28,12 @@ body {
 	background: #FFFFFF;
 	color: #6c6f70;
 }
-
 .container {
+	width: 500px;
+	position: relative;
+}
+
+.mainContainer {
 	width: 500px;
 	height: 819px;
 	position: relative;

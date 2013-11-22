@@ -32,11 +32,19 @@
 	{
 		$user_profile = $facebook->api('/me','GET');
 	} catch (Exception $e) 
-	{
+	{		
 		echo $redirectScript;
         exit;
 	}
+	$isLiked = false;
 	
+	if($request = $_REQUEST['signed_request'])
+	{
+		list($encoded_sig, $payload) = explode('.', $request, 2);
+		$json = base64_decode(strtr($payload, '-_', '+/'));
+		$data = json_decode(base64_decode(strtr($payload, '-_', '+/')), true);
+		$isLiked = $data['page']['liked'];
+	}
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -57,6 +65,7 @@
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>        
     </head>
     <body>
+	<?php if($isLiked): ?>
         <div class="container mainContainer" style="display:none;">
             <div id="content">
 				<form action="#" method="post">
@@ -158,7 +167,9 @@
 				<a href="https://twitter.com/livinglg" target="_blank" class="twButton"><img src="images/twButton.png"></a>
             </div>
         </div>
-
+		<?php else:	?> 
+			<div class="container"><img src="images/notlike.jpg"></div>
+		<?php endif; ?>
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>

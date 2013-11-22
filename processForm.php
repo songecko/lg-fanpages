@@ -74,7 +74,7 @@ if($saved)
 			$ret_obj = $facebook->api('/me/feed', 'POST',
 					array(
 							'link' => 'http://www.lg.com/pa/telefonos-celulares/lg-G2-D805',
-							'message' => 'Estoy participado en la promoción de LG para ganarme un celular G2 todas las semanas, tú también puedes participar.'
+							'message' => 'Estoy participado en la promoción de LG para ganarme un #LGG2 todas las semanas, tú también puedes participar. Visita: http://on.fb.me/19DVQPz.'
 					));
 		} catch(FacebookApiException $e) {
 			echo($e->getType());
