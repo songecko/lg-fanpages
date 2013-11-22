@@ -66,7 +66,7 @@ if($saved)
 	//Dirección del remitente 
 	$headers .= "From: ".$fullname." <".$email.">\r\n"; 
 
-	var_dump(mail($destinatario, $asunto, $cuerpo, $headers));
+	//var_dump(mail($destinatario, $asunto, $cuerpo, $headers));
 	
 	if($user)
 	{
