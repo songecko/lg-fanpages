@@ -178,7 +178,7 @@
 			{
         		if (window.self === window.top) 
             	{
-                	window.location = 'https://www.facebook.com/pages/Testing/140839539432205?id=140839539432205&sk=app_207375499424489';
+                	window.location = 'https://www.facebook.com/LGLatino/app_207375499424489';
             	}else
             	{
                 	$('.mainContainer').show();
